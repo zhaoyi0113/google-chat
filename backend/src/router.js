@@ -11,10 +11,12 @@ router.get('/users', (req, res) => {
   res.send({user: 'hello'});
 });
 
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
 	const url = getAuthenticatedUrl();
-	res.writeHead(302, {'Location': url});
-	res.end();
+	console.log('login url', url);
+	// res.writeHead(302, {'Location': url});
+	// res.end();
+	res.send({url});
 });
 
 router.get('/authenticate', (req, res) => {
